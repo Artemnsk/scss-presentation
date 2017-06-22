@@ -1,0 +1,11 @@
+#block-system-main-menu {
+  display: none;
+  @include breakpoint($mobile-menu-breakpoint) {
+    display: block;
+    float: left;
+    .menu.nav.navbar-nav {
+      z-index: 999;
+      @include menu-style(#6d6e71, $color-tertiary-1);
+    }
+  }
+}

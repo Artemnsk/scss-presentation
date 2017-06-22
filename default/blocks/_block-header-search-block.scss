@@ -1,0 +1,11 @@
+.block.header-search-block {
+  form {
+    .views-submit-button {
+      .form-submit {
+        &:after {
+          color: #6d6e71;
+        }
+      }
+    }
+  }
+}

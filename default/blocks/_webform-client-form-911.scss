@@ -1,0 +1,10 @@
+#webform-client-form-911 {
+  @include boxes-box-press_and_media();
+  & > div {
+    border: 1px solid $color-secondary-1-light;
+    min-height: 380px;
+  }
+  input {
+    margin: 10px 0;
+  }
+}

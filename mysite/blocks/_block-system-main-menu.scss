@@ -1,0 +1,8 @@
+.block#block-system-main-menu {
+  display: none;
+  @include breakpoint($mobile-menu-breakpoint) {
+    display: block;
+    float: left;
+    // ...
+  }
+}

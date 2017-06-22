@@ -1,0 +1,284 @@
+html body.admin-menu {
+  margin-top: 0 !important;
+}
+
+* {
+  [class^="icon-"]:before,
+  [class*=" icon-"]:before {
+    font-family: $font-family-icon;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit
+  }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3 {
+    font-family: $font-family-main;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: $font-family-main;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1em;
+    border: none;
+  }
+  h1 {
+    font-size: $font-size-h1;
+    margin: 0.67em 0;
+    padding: 0;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h4, h5 {
+    margin: .5em 0;
+  }
+  p {
+    margin: 0 0 10px;
+  }
+  h1 small, h2 small, h3 small, h4 small {
+    font-size: .65em;
+  }
+  b, strong {
+    font-weight: 900;
+  }
+  a, a:active, a:visited, a:focus, a:hover, a:focus:hover, button, button:hover {
+    color: $color-theme-1;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+  }
+  a {
+    color: $color-theme-1;
+    &:hover {
+      color: $color-theme-1;
+    }
+  }
+  .btn,
+  .btn.btn-default,
+  .btn.btn-info {
+    @include btn-style();
+  }
+  .boxes-box-controls {
+    display: none;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=password] {
+    @include input-style();
+  }
+  address {
+    margin: 10px 0;
+  }
+
+  ul.btn-group {
+    margin: 10px 0;
+    padding: 0;
+    a {
+      line-height: 1.5em;
+    }
+  }
+
+  /*--- Drupal-specific classes ---*/
+  .label-inline {
+    display: inline-block;
+  }
+
+  .menu {
+    .menu-hidden {
+      display: none !important;
+    }
+  }
+
+  .region-sidebar-second {
+    div {
+      // FIXME: .. and what we are going to do when this region fall down for laptops? It's width = 768px but max-width = 300px??
+      max-width: 300px;
+    }
+  }
+
+  .field-collection-container {
+    border: none;
+    margin: 0;
+  }
+
+  // TODO: check it.
+  .breadcrumb {
+    padding: 10px 0;
+    font-size: 11px;
+    background-color: transparent;
+    a {
+      color: $color-tertiary-2-dark;
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+      text-transform: uppercase;
+      &:hover {
+        text-decoration: none;
+        color: $color-theme-1;
+      }
+      &:after {
+        content: "\\";
+        margin-left: 5px;
+        font-size: 13px;
+      }
+    }
+    .fa-angle-right {
+      display: none;
+    }
+    > li + li:before {
+      padding: 0;
+      content: "";
+    }
+    > .active {
+      text-transform: uppercase;
+      color: $color-theme-1;
+    }
+  }
+}
+
+body {
+  font-family: $font-family-main;
+  font-size: $font-size-base;
+}
+
+a.btn-link {
+  @include btn-style();
+  i {
+    display: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $color-theme-1;
+  .fa-stack {
+    .fa {
+      color: $color-theme-1;
+    }
+    .fa-inverse {
+      color: $color-tertiary-1;
+    }
+    .fa-circle {
+      display: none;
+    }
+  }
+  &:hover {
+    .fa-stack {
+      background: $color-theme-1;
+      border-radius: 50%;
+      .fa {
+        color: $color-tertiary-1;
+      }
+    }
+  }
+}
+
+// tabs
+
+ul.tabs--primary.btn-group {
+  border-bottom: 1px solid $color-theme-1;
+  > li {
+    box-shadow: none;
+    @include border-radius(0);
+    border: none;
+    padding: 10px 15px 15px;
+
+    a {
+      color: $color-tertiary-2-base;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: $font-family-main-bold;
+      font-size: 16px;
+    }
+    &.active,
+    &:hover,
+    &.btn.btn-secondary:hover {
+      background: $color-theme-1 !important;
+      border: 1px solid $color-theme-1 !important;
+      border-bottom: none !important;
+      a {
+        color: $color-tertiary-1 !important;
+      }
+    }
+  }
+}
+
+// custom styles for front page with parallax blocks
+
+.link-more,
+.btn-primary {
+  clear: both;
+  @include btn-style();
+}
+
+.link-more {
+  @include breakpoint('m-') {
+    display: block;
+  }
+}
+
+.flex-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.overlay {
+  max-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.slide-text.left {
+  text-align: left;
+  left: 100px;
+}
+
+.slide-text {
+  position: absolute;
+  color: #FFF !important;
+}
+
+.underline-border {
+  margin: 0;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  padding-bottom: 30px;
+  border-color: $color-theme-1;
+}
+
+.colored {
+  color: $color-theme-1;
+}
+
+.grow.come-in {
+  transform: translateY(350px) scale(1);
+  animation: come-in 0.8s ease forwards;
+}
+
+.grow.come-in:nth-child(odd) {
+  animation-duration: 1s; /* So they look staggered */
+}
+
+.list-item.come-in {
+  transform: translateY(200px) scale(1);
+  animation: come-in 0.8s ease forwards;
+}
+
+.list-item.come-in:nth-child(odd) {
+  animation-duration: 1s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@include accordion();

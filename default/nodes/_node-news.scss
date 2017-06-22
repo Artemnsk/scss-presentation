@@ -1,0 +1,105 @@
+.node.node-news {
+  .field-name-post-date {
+    .field-item {
+      @include include-icon($fa-var-calendar, 'before');
+      &:before {
+        margin-right: 5px;
+      }
+    }
+  }
+  .field-name-field-topic {
+    .field-item {
+      @include include-icon($fa-var-tag, 'before');
+      &:before {
+        margin-right: 5px;
+      }
+    }
+  }
+  &.view-mode-press_releases {
+    max-width: 400px;
+    margin: 20px auto;
+    border: 1px solid #c0c2c4;
+    width: 100%;
+    max-width: none;
+    .field-name-field-image {
+      overflow: hidden;
+      height: auto;
+      a {
+        display: block;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    .group-content {
+      // Used below
+      $padding-content: 15px;
+      position: relative;
+      height: 230px;
+      padding: $padding-content;
+      .field-name-title {
+        color: $color-secondary-4;
+        font-size: $font-size-base;
+        text-transform: uppercase;
+        h4 {
+          font-weight: 600;
+        }
+      }
+      .field-name-field-short-description {
+        font-size: 14px;
+        @include breakpoint('l+') {
+          max-height: 82px;
+          overflow: hidden;
+        }
+      }
+      .group-bottom {
+        position: absolute;
+        bottom: $padding-content;
+      }
+    }
+    @include breakpoint("l+") {
+      max-width: none;
+      .field-name-field-image {
+        height: 200px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    @include breakpoint("xl") {
+      .field-name-field-image {
+        height: 150px;
+      }
+    }
+  }
+  &.view-mode-full {
+    margin: 0 0 30px 0;
+    .field-name-title {
+      h1:after {
+        width: 125px;
+      }
+    }
+    .field-name-post-date {
+      margin-bottom: 10px;
+    }
+    .btn {
+      background-color : $color-theme-1;
+      color: white;
+      i {
+        margin-right: 10px;
+      }
+      &:hover {
+        background-color : #fff !important;
+        color: $color-theme-1 !important;
+      }
+    }
+    .field-type-image {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

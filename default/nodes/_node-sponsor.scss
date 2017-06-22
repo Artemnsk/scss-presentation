@@ -1,0 +1,43 @@
+.node.node-sponsor.view-mode-full {
+  margin-top: 20px;
+  @include bootstrap-row();
+  .group-left {
+    @include bootstrap-col();
+    @include bootstrap-col-md('8');
+    float: right;
+    @include breakpoint('s-') {
+      width: 100%;
+    }
+  }
+  .group-right {
+    @include bootstrap-col();
+    @include bootstrap-col-md('4');
+    float: right;
+    img {
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      margin: 0 auto;
+
+    }
+    @include breakpoint('s-') {
+      width: 100%;
+
+    }
+  }
+  .field-name-title {
+    a {
+      color: $color-violet-main;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    h1, h2, h3, h4 {
+      display: inline-block;
+      &:after {
+        width: 60%;
+      }
+    }
+  }
+}

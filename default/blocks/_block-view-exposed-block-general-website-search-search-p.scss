@@ -1,0 +1,23 @@
+.block#block-view-exposed-block-general-website-search-search-p {
+  display: none;
+  @include breakpoint($mobile-menu-breakpoint) {
+    display: block;
+    @include main-search-block();
+    form {
+      .views-submit-button {
+        .form-submit {
+          &:after {
+            color: #6d6e71;
+
+          }
+        }
+      }
+      @include breakpoint('lg-') {
+        width: 78px;
+        .views-widget-filter-search_api_views_fulltext {
+          right: 78px;
+        }
+      }
+    }
+  }
+}

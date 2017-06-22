@@ -1,0 +1,107 @@
+#block-nice-user-menu-nice-user-menu-mobile {
+  height: 100%;
+  float: right;
+  .nice-user-menu-mobile-wrapper {
+    height: 100%;
+    position: relative;
+    @include element-transition($mobile-menu-transition);
+    .nice-user-menu-mobile {
+      height: 100%;
+      @include element-transition($mobile-menu-transition);
+      width: $mobile-menu-width;
+      position: absolute;
+      right: 0;
+      button {
+        @include element-transition($mobile-menu-transition);
+        display: block;
+        color: #6d6e71;
+        position: absolute;
+        right: 100%;
+        top: 0;
+        margin: 0;
+        width: $mobile-header-height;
+        border: none;
+        &,
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
+      $mobile-menu-item-padding: $bootstrap-padding;
+      .mobile-user-menu {
+        width: $mobile-menu-width;
+        position: fixed;
+        right: 0;
+        height: 100%;
+        // Same as menu color.
+        background-color: #666;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        float: right;
+        @include element-transition($mobile-menu-transition);
+        overflow: hidden;
+        .current-item {
+          background-color: rgba(0, 0, 0, 0.4);
+          height: $mobile-header-height;
+          line-height: $mobile-header-height;
+          text-align: center;
+          position: relative;
+          &:before {
+            content: "\f104";
+            font-family: FontAwesome;
+            position: absolute;
+            left: $mobile-menu-item-padding;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .menu-panel {
+          ul {
+            margin: 0;
+            padding: 0;
+            li {
+              display: block;
+              height: $mobile-header-height;
+              padding: 0 $mobile-menu-item-padding;
+              border-bottom: 1px solid #555;
+              &:last-child {
+                border-bottom: none;
+              }
+              a {
+                color: inherit;
+                font-weight: inherit;
+                line-height: $mobile-header-height;
+                display: block;
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          // FIXME: last link of root menu is Register and it should be red. Maybe some class needed to this link?
+          &[item-id="root"] {
+            ul {
+              li:last-child {
+                background-color: $color-theme-1;
+              }
+            }
+          }
+        }
+      }
+      &.mobile-menu-collapse {
+        button {
+          right: $bootstrap-padding;
+          margin-right: -$bootstrap-padding;
+        }
+        .mobile-user-menu {
+          width: 0;
+        }
+      }
+    }
+  }
+  @include breakpoint($mobile-menu-breakpoint) {
+    display: none;
+  }
+}

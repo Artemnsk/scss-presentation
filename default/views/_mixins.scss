@@ -1,0 +1,356 @@
+@mixin views-homepage-events() {
+  .views-row {
+    @include bootstrap-col();
+    @include bootstrap-col-xs(12);
+    @include bootstrap-col-sm(6);
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(1) {
+      // No other way to alter it.
+      @include views-homepage-events-nth-node(1);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    &:nth-child(1):hover {
+      // No other way to alter it.
+      @include views-homepage-events-nth-node(2);
+    }
+    @include breakpoint("l+") {
+      margin-bottom: 0;
+    }
+  }
+  .description {
+    margin-bottom: 20px;
+  }
+}
+
+// Apply CSS to event nodes depends on odd/even views-row.
+// $n = 1 - odd row.
+// $n = 2 - even row.
+@mixin views-homepage-events-nth-node($n) {
+  // Define list variables. 1st value for odd items and 2nd value if for even values.
+  $background-color: $color-theme-1, $color-tertiary-1;
+  $general-text-color: $color-tertiary-1, $color-theme-1;
+  $date-text-color: $color-tertiary-1, $color-secondary-4;
+  $short-description-text-color: $color-tertiary-1, $color-secondary-4;
+  // Apply variables.
+  color: nth($general-text-color, $n);
+  .node .group-left {
+    transition: background-color .3s;
+    background-color: nth($background-color, $n);
+    .field-name-field-date {
+      color: nth($date-text-color, $n);
+    }
+    .field-name-field-short-description {
+      color: nth($short-description-text-color, $n);
+    }
+  }
+}
+@mixin border-schedule ($color) {
+  border-top: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 4px solid $color;
+}
+@mixin schedule-accordion() {
+  &.ui-accordion {
+    &.ui-widget {
+      font-family: $font-family-main;
+    }
+    >.track-0 {
+      @include border-schedule (transparent);
+      border-left: 0px solid transparent;
+      >.ui-accordion-header {
+        background: repeating-linear-gradient(-45deg, white, white 10px, #f1f1f2 10px, #f1f1f2 27px) !important;
+      }
+    }
+    [class^="track"]:nth-child(2n) {
+      background-color : #f1f1f2;
+    }
+
+    .ui-accordion-header {
+      margin-top: 0;
+      border: none;
+
+      &.ui-state-default {
+        background-image : none;
+        background-color: transparent;
+      }
+      &.ui-state-hover {
+        background-image : none;
+        background-color: transparent;
+      }
+      &.ui-state-active {
+        background-image : none;
+        background-color: transparent;
+        .field-name-title {
+          &:before {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    .ui-widget-content {
+      border: none;
+      padding-left: 25%;
+    }
+    .ui-corner-top, .ui-corner-bottom, .ui-corner-all {
+      border-top-right-radius: 0px !important;
+      border-top-left-radius: 0px !important;
+      border-bottom-right-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+    }
+    .ui-accordion-header-icon {
+      display : none;
+    }
+    .schedule-accordion-header {
+      .field-name-field-session-date {
+        float: left;
+        min-height: 40px;
+        width: 25%;
+        display: block;
+        font-weight: 600;
+      }
+      .field-name-title {
+        color: $color-theme-1;
+        font-size: 16px;
+        font-weight: 700;
+        float: right;
+        width: 75%;
+        .field-name-field-session-special{
+          display: inline-block;
+          margin-right: 8px;
+          h2{
+            padding: 3px;
+            border: white;
+            border-radius: 4px;
+            font-size: 13px;
+            background-color: rgb(85, 85, 85);
+            color: white;
+            display: inline-block;
+            font-weight: bold;
+          }
+        }
+        @include include-icon($fa-var-angle-down, 'before');
+        &:before {
+          transition: all 0.3s;
+          font-size: 25px;
+          font-weight: 600;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+      }
+      .field-name-field-session-location {
+        float: right;
+        width: 75%;
+        text-transform: uppercase;
+        font-weight: 600;
+        @include include-icon($fa-var-map-marker, 'before');
+        &:before {
+          margin-left: 28px;
+          margin-right: 5px;
+        }
+      }
+      @include breakpoint('m-') {
+        .field-name-field-session-date {
+          float: none;
+          width: 100%;
+          min-height: initial;
+        }
+        .field-name-title {
+          float: none;
+          width: 100%;
+          &:before {
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+        }
+        .field-name-field-session-location {
+          float: none;
+          width: 100%;
+          &:before {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+  }
+  .view-mode-speaker_schedule {
+    @include bootstrap-col();
+    @include bootstrap-col-md(6);
+    min-height: 130px;
+    margin-bottom: 10px;
+    .field-type-image {
+      float: left;
+      margin-right: 10px;
+      img {
+        margin-top: 3px;
+      }
+    }
+    .field-name-field-fname {
+      display: inline-block;
+      margin-right: 5px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .field-name-field-lname {
+      @extend .field-name-field-fname;
+    }
+    .field-name-field-job-title {
+      text-transform: capitalize;
+      font-size: 12px;
+    }
+    .field-name-field-company-name, .field-name-node-link {
+      @extend .field-name-field-job-title;
+    }
+
+  }
+}
+@mixin speaker-list() {
+  .views-row {
+    @include bootstrap-col();
+    @include bootstrap-col-md('4');
+    text-align : left;
+    cursor     : pointer;
+    padding: 0 15px !important;
+    >.node-speaker {
+      height: 400px;
+    }
+    clear: none !important;
+  }
+}
+@mixin filter-widget() {
+  clear: both;
+  width: 100%;
+  .views-exposed-form {
+    .views-exposed-widget {
+      &#edit-event-day-tid-selective-wrapper {
+        float: none;
+        width: 100%;
+        .form-group {
+          width: 100%;
+          display: table;
+          [id^="edit-event-day"] {
+            display: table-cell;
+            width: 240px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            a {
+              vertical-align: middle;
+              display: inline-block;
+              height: 80px;
+              width: 100%;
+              background-color: white;
+              color: $color-violet-main;
+              border: 1px solid $color-gray-3;
+              font-size: 24px;
+              font-weight: 600;
+              text-transform: uppercase;
+              padding: 20px;
+              line-height: 20px;
+              .date-day {
+                text-transform : capitalize;
+                font-size: 14px;
+                display: inline-block;
+                color: black;
+                font-weight: 400;
+                width: 100%;
+              }
+              &.active {
+                $background-color: $color-violet-main;
+                background-color: $background-color;
+                color: white;
+                border: 0px solid $background-color;
+                position: relative;
+                .date-day {
+                  color: white;
+                }
+                &:after {
+                  content: " ";
+                  position: absolute;
+                  bottom: -21px;
+                  left: 15%;
+                  border: 10px solid transparent;
+                  border-top: 11px solid $background-color;
+                  @include breakpoint("s+") {
+                    left : 20%;
+                  }
+                }
+              }
+            }
+            &:after {
+              display: none;
+            }
+          }
+          @include breakpoint('m-') {
+            .form-item {
+              display: none;
+            }
+            select {
+              display: block !important;
+            }
+          }
+        }
+      }
+      &#edit-field-track-tid-wrapper {
+        float: none;
+        width: 100%;
+        .form-item-field-track-tid {
+          .form-item {
+            background-color: lighten($color-violet-main, 10%);
+            width: 100%;
+            padding: 10px;
+            [id^="edit-field-track"] {
+              background-color: transparent;
+              width: auto;
+              display: inline-block;
+              a {
+                margin: 0;
+                padding: 0 10px;
+                color: white;
+                text-transform: uppercase;
+                &.active {
+                  position: relative;
+                  &:after {
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    background-color : white;
+                  }
+                }
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          @include breakpoint('m-') {
+            .form-item {
+              display: none;
+            }
+            select {
+              display: block !important;
+            }
+          }
+        }
+      }
+      .chosen-container {
+        display: none !important;
+        visibility: hidden;
+      }
+      select {
+        width: 100% !important;
+        height: 43px;
+        margin: 15px 0;
+      }
+
+    }
+  }
+}

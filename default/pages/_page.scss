@@ -1,0 +1,211 @@
+body {
+  background: $color-tertiary-1;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-main;
+  color: $color-theme-3;
+  & * {
+    transition: all 0s;
+  }
+  .region-region-page-top {
+    position: relative;
+    float: left;
+    width: 100%;
+    background: $color-tertiary-2-dark;
+    padding: 10px 15px 5px;
+    text-align: center;
+    z-index: 1000;
+    #block-f2f-multicity-top-bar-text {
+      float: left;
+      margin: 0px;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: rgb(255, 255, 255);
+      p {
+        float: left;
+      }
+      .date-line {
+        color: rgb(241, 90, 41);
+        float: right;
+        margin-left: 10px;
+      }
+    }
+  }
+  header.navbar {
+    height: $mobile-header-height;
+    border-radius: 0;
+    width: 100%;
+    padding: 0;
+    // TODO: I overrided some style. Maybe even Bootstrap's. Not sure.
+    max-width: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 0;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+    // Needed for smooth slideDown/Up.
+    min-height: 0;
+    &.affix-top {
+      position: absolute;
+    }
+    &.affix {
+      position: fixed;
+      // TODO: affix library doesn't work properly?
+      top: 0 !important;
+    }
+    .container {
+      height: 100%;
+      .navbar-header {
+        height: 100%;
+        float : left;
+        margin: 0;
+        @include breakpoint('lg-') {
+          padding: 0;
+        }
+        .logo {
+          height: 100%;
+          margin: 0;
+          padding: 5px;
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+    @include breakpoint($mobile-menu-breakpoint) {
+      height: auto;
+      .container {
+        .navbar-header {
+          display: block;
+          height: $navbar-height;
+          .logo {
+            display: block;
+            margin: 0;
+            padding: 5px 25px 5px 5px;
+            img {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+    .main-menu-wrapper {
+      height: 100%;
+      @include breakpoint('l-') {
+        text-align: right;
+      }
+    }
+  }
+  .main-container {
+    padding: 0;
+  }
+  .content-suffix {
+    padding: 20px 15px 40px;
+    text-align: center;
+    background-color: $color-violet-main;
+    color: white;
+    @include parallax-background();
+    background-image: url("/sites/all/themes/f2f17/assets/img/get-updates-background.png");
+    background-position-y: -700px;
+    background-size: cover;
+    .region-content-suffix {
+      @include bootstrap-container();
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 40px;
+      color: #bcbec0;
+      margin-bottom: 10px;
+      @include underline(white, 1px);
+      &:after {
+        margin: 0 auto;
+        top: 5px;
+      }
+      .colored {
+        color: white;
+      }
+    }
+    form {
+      $height: 43px;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 500px;
+      .webform-component-email {
+        margin: 0;
+        border: none;
+        height: $height;
+        line-height: $height + 10;
+        @include breakpoint("s+") {
+          width: 60%;
+          //float: left;
+        }
+      }
+      button.form-submit {
+        @include breakpoint("s+") {
+          width : 40%;
+          //float : left;
+        }
+        @include submit-button($height);
+      }
+      .webform-component--text {
+        color: white;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .mobile-left {
+    @include element-transition($mobile-menu-transition);
+    position: relative;
+    right: $mobile-menu-width;
+    &.mobile-menu-collapse {
+      right: 0;
+    }
+    .parallax-block {
+      position: relative;
+      width: 100%;
+
+      .f2f-header-wrapper-widescreen {
+        min-height: 360px;
+        @include parallax-block();
+        background-color: #428BCA;
+        color: #FFF;
+        overflow: hidden;
+        position: relative;
+      }
+    }
+  }
+  // Right columns which appear in top on small resolution.
+  .right-goes-top {
+    @include breakpoint("s+") {
+      float: right;
+    }
+  }
+  //styles for custom blocks on hotel&travel page
+  aside {
+    .field-name-field-right-column-callout {
+      .border {
+        padding: 30px 20px;
+        border: 1px solid $color-gray-3;
+        h1, h2, h3, h4 {
+          color: $color-theme-1;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .wide-button {
+        border: 1px solid $color-gray-main;
+        color: $color-gray-main;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 10px 20px 10px;
+        text-align: center;
+        background-color : #fff;
+        display: block;
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.view.view-general-website-search.view-display-id-search_page {
+  #views-exposed-form-general-website-search-search-page {
+    position: relative;
+    margin-bottom: 20px;
+    .views-exposed-form {
+      .views-exposed-widgets {
+        margin: 0;
+        .views-exposed-widget {
+          padding: 0;
+          float: none;
+          &.views-widget-filter-search_api_views_fulltext {
+            width: 100%;
+            padding-right: 40px;
+            .form-autocomplete {
+              .input-group-addon {
+                position: absolute;
+                top: 12px;
+                right: 20px;
+                display: block;
+                padding: 0;
+                .glyphicon {
+                  color: $color-tertiary-2-dark;
+                }
+              }
+            }
+            .input-group {
+              display: block;
+              input {
+                width: 100%;
+                height: 40px;
+                display: block;
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+              }
+            }
+          }
+          &.views-submit-button {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            .form-submit {
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 0;
+              border-top-right-radius: 2px;
+              border-bottom-right-radius: 2px;
+              border-left: none;
+              background: transparent;
+              font-size: 0;
+              outline: none !important;
+              &:after {
+                display: block;
+                position: absolute;
+                content: "\f002";
+                font-family: $font-family-icon;
+                font-size: 30px;
+                color: $color-tertiary-2-dark;
+                width: 100%;
+                text-align: center;
+                top: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

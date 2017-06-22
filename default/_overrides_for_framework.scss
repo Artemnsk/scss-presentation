@@ -1,0 +1,70 @@
+// overrides buttons' styles for HIMSS-17 theme
+
+.btn,
+.mktoButtonRow button[type=submit],
+.btn-default,
+.btn-primary,
+.btn-secondary,
+.btn-link,
+a#onpeak_button {
+  @include btn-style();
+  &:link,
+  &:visited,
+  &:active
+  &.form-submit {
+    @include btn-style();
+  }
+}
+
+// redesign inputs for f2f17
+
+.form-control,
+input[type=text],
+input[type=password],
+input[type=email],
+.mktoForm textarea.mktoField {
+  @include input-style();
+}
+
+// responsive for tabs
+
+@include breakpoint('m-') {
+  .responsive-tabs-wrapper {
+    .responsive-tabs__list > .responsive-tabs__list__item {
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+}
+
+// overrides for alert and ad blocks
+
+.sponsorBox {
+  width: 100%;
+}
+
+.alert,
+.well {
+  border-radius: 4px;
+  &.alert-info,
+  &.alert-success,
+  &.well-green {
+    @include alert-mixin(info);
+  }
+  &.alert-error,
+  &.alert-danger,
+  &.well-red {
+    @include alert-mixin(error);
+  }
+  &.well-blue,
+  &.alert-warning {
+    @include alert-mixin(warning);
+  }
+}
+
+.table > thead, .table th, .table thead td, .table thead tr {
+  font-weight: normal;
+  background-color: $color-violet-main;
+  color: $color-tertiary-1;
+  text-align: left;
+}

@@ -1,0 +1,136 @@
+.block-webform {
+  form {
+    label {
+      @include form-label();
+    }
+    textarea + .grippie {
+    }
+  }
+  .webform-submit {
+    @include form-button();
+  }
+}
+
+form {
+  .form-subtitle {
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    color: $color-violet-main;
+    text-transform: uppercase;
+  }
+  .form-item {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    label {
+      @include form-label;
+      width: 100%;
+      float: left;
+      color: #666;
+      @include breakpoint('l+') {
+        width: 20%;
+      }
+      span{
+        font-size: 14px;
+        color: #bf0000;;
+      }
+    }
+    .form-textarea-wrapper, input, select {
+      display: block;
+      width: 100%;
+      position: relative;
+      @include form-field();
+      @include breakpoint('l+') {
+        width: 40%;
+      }
+      .form-textarea-wrapper {
+        padding-bottom: 8px
+      }
+      .grippie {
+        position: absolute;
+        bottom: 0px;
+        height: 8px;
+        margin-top: -5px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.webform-submit {
+  @include btn-style;
+  margin-bottom: 20px;
+}
+
+.mktoButtonWrap {
+  margin-left: 0 !important;
+  .mktoButton {
+    @include btn-style;
+    border-color: $color-theme-1 !important;
+    background-color : $color-theme-1 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    margin-left: 0 !important;
+  }
+}
+.mktoForm .mktoFormRow .mktoFormCol {
+  float: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  .mktoGutter {
+    display: none;
+  }
+  .mktoFieldWrap {
+    .mktoLabel {
+      @include form-label;
+      float: none !important;
+      display: inline-block;
+      width: auto !important;
+      min-width: 0 !important;
+      white-space: normal !important;
+    }
+    .mktoAsterix {
+      display: inline-block;
+      margin-left: 5px;
+      float: right;
+    }
+
+    input#Phone{
+      display: block;
+    }
+
+    .mktoField, select {
+      @include form-field;
+      width: 100% !important;
+      @include breakpoint('lg+') {
+        width: 30% !important;
+      }
+      @include breakpoint('l+') {
+        width: 40% !important;
+      }
+      @include breakpoint('xs+') {
+        width: 90% !important;
+      }
+      display: block;
+      float: none;
+    }
+    select.mktoField {
+      height: 43px;
+    }
+    .mktoCheckboxList {
+      width: auto !important;
+      height: auto !important;
+      float: left;
+      input {
+        display: none;
+      }
+    }
+  }
+}
+

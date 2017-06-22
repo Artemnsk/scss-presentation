@@ -1,0 +1,215 @@
+@mixin menu-style($menu-item-color, $menu-item-hover-color) {
+  .caret {
+    display: none;
+  }
+  > li {
+    position: relative;
+    > a {
+      height: 100px;
+      display: table-cell;
+      vertical-align: middle;
+      color: $color-tertiary-1;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: $font-family-main-bold;
+      font-size: 16px;
+      font-weight: 600;
+      &:hover {
+        background-color: $color-theme-1;
+        color: $color-tertiary-1;
+      }
+    }
+    &.open {
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        @include triangle(15px 15px, white, down-left);
+      }
+      > a {
+        color: $menu-item-hover-color;
+      }
+    }
+    ul,
+    ul.dropdown-menu {
+      position: absolute;
+      border: none;
+      width: 200px;
+      box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.5);
+      background-color : #fff;
+      color: $color-tertiary-1;
+      border-radius: 0;
+      .expand-wrapper-outer {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        overflow: visible;
+      }
+      .block-block {
+        max-width: 280px;
+        float: left;
+        margin: 0 40px 20px 0;
+        .img-responsive {
+          border: 1px solid $color-tertiary-1;
+          @include border-radius(2px);
+        }
+      }
+      .container {
+        width: 100%;
+        position: static;
+        padding-right: 0;
+        padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        li {
+          a {
+            margin  : 0;
+            padding : 10px;
+          }
+          &.dropdown {
+            float: none;
+            display: block;
+            position: static;
+            a {
+              margin: 0;
+              padding: 10px;
+            }
+            ul.dropdown-menu {
+              display: none;
+              margin: 0;
+              margin-top: 0px !important;
+              margin-bottom: 0px !important;
+              padding: 10px;
+              position: absolute;
+              left: 200px;
+              top: 0;
+              min-height: 100%;
+              box-shadow: inset 5px 0px 5px -3px rgba(0, 0, 0, 0.8);
+            }
+            &:hover {
+              ul.dropdown-menu {
+                display: block;
+              }
+            }
+            ul.dropdown-menu {
+              background-color : #666;
+            }
+          }
+        }
+        > li {
+          display: block;
+          width: auto;
+          float: none;
+          > a {
+            display: block;
+            position: relative;
+            font-size: 16px;
+            color: #6D6E71;
+            &:hover {
+              box-shadow: none;
+            }
+          }
+          ul.dropdown-menu {
+            @include li-elem();
+            li {
+              padding: 10px 20px 10px 0;
+              margin: 0;
+              border-bottom: 1px solid $color-theme-4;
+            }
+          }
+          a + ul.dropdown-menu {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid $color-theme-4;
+          }
+        }
+      }
+    }
+    &.open {
+      > a {
+        background-color: $color-theme-1;
+        color: $color-tertiary-1;
+      }
+    }
+  }
+}
+
+@mixin triangle($size, $color, $direction) {
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+  $foreground-color: nth($color, 1);
+  $background-color: if(length($color) == 2, nth($color, 2), transparent);
+  height: 0;
+  width: 0;
+  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+    $width: $width / 2;
+    $height: if(length($size) > 1, $height, $height/2);
+
+    @if $direction == up {
+      border-bottom: $height solid $foreground-color;
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+    } @else if $direction == right {
+      border-bottom: $width solid $background-color;
+      border-left: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    } @else if $direction == down {
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+      border-top: $height solid $foreground-color;
+    } @else if $direction == left {
+      border-bottom: $width solid $background-color;
+      border-right: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    }
+  } @else if ($direction == up-right) or ($direction == up-left) {
+    border-top: $height solid $foreground-color;
+
+    @if $direction == up-right {
+      border-left: $width solid $background-color;
+    } @else if $direction == up-left {
+      border-right: $width solid $background-color;
+    }
+  } @else if ($direction == down-right) or ($direction == down-left) {
+    border-bottom: $height solid $foreground-color;
+
+    @if $direction == down-right {
+      border-left: $width solid $background-color;
+    } @else if $direction == down-left {
+      border-right: $width solid $background-color;
+    }
+  } @else if ($direction == inset-up) {
+    border-color: $background-color $background-color $foreground-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction == inset-down) {
+    border-color: $foreground-color $background-color $background-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction == inset-right) {
+    border-color: $background-color $background-color $background-color $foreground-color;
+    border-style: solid;
+    border-width: $width $height;
+  } @else if ($direction == inset-left) {
+    border-color: $background-color $foreground-color $background-color $background-color;
+    border-style: solid;
+    border-width: $width $height;
+  }
+}
+
+@mixin boxes-box-press_and_media() {
+  @include bootstrap-col();
+  @include bootstrap-col-xs(12);
+  @include bootstrap-col-sm(6);
+  @include bootstrap-col-lg(3);
+  h3 {
+    @include title-style($color-theme-1, 22px, 600);
+    margin: 5px 0 12px 0;
+  }
+  & > div {
+    padding: 25px;
+  }
+  margin: 20px auto;
+}

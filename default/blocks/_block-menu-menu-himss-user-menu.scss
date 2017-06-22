@@ -1,0 +1,62 @@
+#block-menu-menu-himss-user-menu {
+  float: right;
+  display: none;
+  .menu {
+    > li {
+      & * {
+        transition: none;
+      }
+      a {
+        padding: 0;
+        line-height: 16px;
+        color: $color-tertiary-1;
+        &:hover,
+        &:focus {
+          background: transparent;
+        }
+        .caret {
+          border-top-color: $color-tertiary-1;
+          border-bottom-color: $color-tertiary-1;
+        }
+      }
+      > a {
+        padding: 0 15px;
+        &:hover .caret,
+        &:focus .caret {
+          border-top-color: $color-theme-1;
+          border-bottom-color: $color-theme-1;
+        }
+      }
+      &.open {
+        a {
+          background-color: inherit;
+        }
+        > a {
+          color: $color-theme-1;
+        }
+        > ul.dropdown-menu {
+          z-index: 1001;
+          background: $color-tertiary-2-dark;
+          border: none;
+          padding: 15px;
+          left: inherit;
+          right: 0;
+          width: 100%;
+          li {
+            display: block;
+            text-align: left;
+            padding: 5px 0;
+            border-bottom: 1px solid;
+            margin: 0;
+            &:last-child {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint($mobile-menu-breakpoint) {
+    display: block;
+  }
+}

@@ -1,0 +1,21 @@
+// Styles for all nodes of all displays. Rarely used.
+.node {
+
+}
+
+// Display-specific styles which are not depend on node type.
+.node.view-mode-full {
+  h2 {
+    color: $color-violet-main;
+  }
+}
+
+.node.view-mode-search-result {
+  .field-title {
+    color: $color-violet-main;
+  }
+  .field-body {
+    font-size: $font-size-base;
+    color: $color-primary-1;
+  }
+}

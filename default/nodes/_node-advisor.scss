@@ -1,0 +1,10 @@
+.node {
+  &.node-advisor {
+    &.view-mode-session_speaker {
+      @include speaker();
+    }
+  }
+  &.view-mode-full {
+    @include speaker-full();
+  }
+}

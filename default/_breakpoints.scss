@@ -1,0 +1,81 @@
+@mixin breakpoint($name) {
+  @if ($name == 'xs') {
+    @media only screen and (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+  @if ($name == 's') {
+    @media only screen and (min-width: $screen-s-min) and (max-width: $screen-s-max) {
+      @content;
+    }
+  }
+  @if ($name == 's+') {
+    @media only screen and (min-width: $screen-s-min) {
+      @content;
+    }
+  }
+  @if ($name == 's-') {
+    @media only screen and (max-width: $screen-s-max) {
+      @content;
+    }
+  }
+  @if ($name == 'm') {
+    @media only screen and (min-width: $screen-m-min) and (max-width: $screen-m-max) {
+      @content;
+    }
+  }
+  @if ($name == 'm+') {
+    @media only screen and (min-width: $screen-m-min) {
+      @content;
+    }
+  }
+  @if ($name == 'm-') {
+    @media only screen and (max-width: $screen-m-max) {
+      @content;
+    }
+  }
+  @if ($name == 'l') {
+    @media only screen and (min-width: $screen-l-min) and (max-width: $screen-l-max) {
+      @content;
+    }
+  }
+  @if ($name == 'l+') {
+    @media only screen and (min-width: $screen-l-min) {
+      @content;
+    }
+  }
+  @if ($name == 'l-') {
+    @media only screen and (max-width: $screen-l-max) {
+      @content;
+    }
+  }
+  @if ($name == 'lg') {
+    @media only screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+      @content;
+    }
+  }
+  @if ($name == 'lg+') {
+    @media only screen and (min-width: $screen-lg-min) {
+      @content;
+    }
+  }
+  @if ($name == 'lg-') {
+    @media only screen and (max-width: $screen-lg-max) {
+      @content;
+    }
+  }
+  @if ($name == 'xl') {
+    @media only screen and (min-width: $screen-xl-min) {
+      @content;
+    }
+  }
+}
+
+// example of usage
+/*
+@include breakpoint('xs') {
+  body {
+    color: red;
+  }
+}
+*/

@@ -1,0 +1,36 @@
+
+
+
+.node.node-basic-page {
+  .mktoButtonWrap {
+    margin-left: 0 !important;
+    .mktoButton {
+      @include form-button();
+    }
+  }
+  .mktoForm .mktoFormRow .mktoFormCol {
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .mktoFieldWrap {
+      width: 100%;
+      &>label {
+        @include form-label();
+      }
+      .mktoTextField, .mktoEmailField {
+        @include form-field();
+      }
+      .mktoCheckboxList {
+        @include form-checkbox();
+      }
+
+    }
+  }
+  &.view-mode-full {
+    img {
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
+}

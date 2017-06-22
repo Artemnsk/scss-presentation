@@ -1,0 +1,88 @@
+.view-schedule {
+  .view-header {
+    h1 {
+      @include title-style($color-theme-1, 40px, 400);
+      @include underline($color-theme-1, 1px);
+      &:after {
+        margin: 0 auto;
+        top: 10px;
+
+      }
+    }
+  }
+  .view-filters {
+    @include filter-widget();
+    .views-submit-button {
+      display: none;
+    }
+    #views-exposed-form-schedule-schedule{
+      .views-exposed-form {
+        .views-exposed-widget, .views-exposed-widgets {
+          margin-bottom: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+  .view-content {
+    @include schedule-accordion();
+    &.ui-accordion {
+      &.ui-widget {
+        > * {
+          position: relative;
+          span.file {
+            z-index: 100;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            img,
+            .file-size {
+              display: none;
+            }
+            a {
+              font-size: 0;
+              &:after {
+                font-family: $font-family-icon;
+                content: "\f019";
+                font-size: 18px;
+                color: $color-theme-4;
+              }
+              &:hover:after {
+                color: $color-theme-1;
+              }
+            }
+          }
+        }
+      }
+    }
+    div.time-bar-schedule{
+      background-color:$color-violet-4;
+      color: white;
+      text-transform: uppercase;
+      padding-left: 15px;
+
+    }
+    a {
+      div.btn-download {
+        background-color: white;
+        color: $color-theme-1 !important;
+        text-transform: none;
+        i {
+          padding-left: 15px;
+          padding-top: 3px;
+          @include breakpoint("s-") {
+            position: absolute;
+          }
+        }
+        @include breakpoint("l+") {
+          display: none;
+        }
+      }
+    }
+    @include breakpoint("m-") {
+      span.file {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.entity-field-collection-item.field-collection-item-field-library-pdf.view-mode-full {
+  .field-name-field-body {
+
+  }
+  .field-label {
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1em;
+    color: $color-primary-1-base;
+    margin: 20px 0;
+  }
+  .file-link {
+    a {
+      color: $color-tertiary-1;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .file-size,
+  .file-icon {
+    display: none;
+  }
+}

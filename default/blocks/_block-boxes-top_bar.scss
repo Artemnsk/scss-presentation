@@ -1,0 +1,16 @@
+// mockup http://prntscr.com/cfxi7e
+#block-boxes-top-bar {
+  float: left;
+  p {
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $color-tertiary-1;
+    float: left;
+    &.date-line {
+      color: $color-theme-1;
+      float: right;
+      margin-left: 10px;
+    }
+  }
+}

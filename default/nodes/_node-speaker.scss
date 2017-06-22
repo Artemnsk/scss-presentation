@@ -1,0 +1,19 @@
+.node {
+  &.node-speaker {
+    &.view-mode-full {
+      @include speaker-full();
+    }
+    &.view-mode-presentation_speaker {
+      display: inline;
+      &:before,
+      &:after {
+        content: '';
+        display: none;
+        clear: none;
+      }
+    }
+    &.view-mode-session_speaker {
+      @include speaker();
+    }
+  }
+}

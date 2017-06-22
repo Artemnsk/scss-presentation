@@ -1,0 +1,14 @@
+&.front {
+  header#navbar {
+    .navbar-nav {
+      &>li {
+        &>a.active {
+          color: $color-gray-main !important;
+          &:hover {
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}

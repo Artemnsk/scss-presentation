@@ -1,0 +1,38 @@
+.entity-field-collection-item.field-collection-item-field-library-webinar {
+
+}
+
+.entity-field-collection-item.field-collection-item-field-library-webinar.view-mode-full {
+  .field-name-field-link {
+    a {
+      width: 100%;
+      color: $color-tertiary-1;
+    }
+  }
+  .field-name-field-additional-document {
+    margin-top: 15px;
+    .field-label {
+      color: $color-primary-1-base;
+      font-size: $font-size-heading-base;
+      font-weight: 300;
+      width: 100%;
+      margin: 10px 0;
+    }
+    .field-item {
+      a {
+        padding-left: 15px;
+        &:before {
+          color: $color-tertiary-2-dark;
+          font-family: "FontAwesome";
+          content: "\f054";
+          font-size: .7em;
+          display: inline-block;
+          left: 0;
+          top: 0;
+          position: absolute;
+          opacity: .5
+        }
+      }
+    }
+  }
+}

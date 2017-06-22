@@ -1,0 +1,10 @@
+$sitename-selector: ".site-" + $sitename;
+
+body#{$sitename-selector} {
+  @import "mixins";
+  @import "pages/index";
+  @import "nodes/index";
+  @import "blocks/index";
+  @import "views/index";
+  @import "taxonomy_terms/index";
+}

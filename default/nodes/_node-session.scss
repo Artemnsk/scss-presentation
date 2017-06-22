@@ -1,0 +1,36 @@
+.node.node-session.view-mode-full {
+  .field-name-title {
+    h1, h2, h3, h4 {
+      color: $color-violet-main;
+      .color {
+        color: $color-violet-main;
+      }
+    }
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 34px;
+      @include underline($color-violet-main, 2px)
+
+    }
+  }
+}
+
+.node.node-session.view-mode-speaker_session {
+  .field-name-title {
+    h3 {
+      margin: 10px 0;
+      font-weight: 600;
+      a {
+        color: $color-theme-1;
+      }
+    }
+  }
+  .field-name-field-short-description {
+    margin-top: 10px;
+  }
+  .field-name-session-date,.field-name-field-session-date,.field-name-field-session-location {
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,55 @@
+.view {
+  margin: 40px auto;
+  .view-header {
+    margin-bottom: 10px;
+    text-align: center;
+    h2,
+    h1.block-title {
+      @include title-style($color-theme-1, 40px, 300);
+    }
+    h1, h2, h3, .h1, .h2, .h3 {
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 40px;
+      color: #bcbec0;
+      @include underline($color-theme-1, 2px);
+      &:after {
+        margin: 0 auto;
+        top: 5px;
+      }
+    }
+    .description {
+
+    }
+  }
+  .view-content {
+    overflow: hidden;
+  }
+  .view-footer {
+    text-align: center;
+    a {
+      display: inline-block;
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+  // Default Pagination.
+  // TODO: don't believe we need it.
+  .pagination {
+    > li > a,
+    > li > span {
+      padding: 6px 12px 3px;
+    }
+    > .active > a,
+    > .active > span,
+    > .active > a:hover,
+    > .active > span:hover,
+    > .active > a:focus,
+    > .active > span:focus {
+      background-color: $color-theme-1;
+      border-color: $color-theme-1;
+    }
+  }
+}

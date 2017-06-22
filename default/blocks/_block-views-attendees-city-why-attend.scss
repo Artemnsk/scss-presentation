@@ -1,0 +1,8 @@
+.block#block-views-attendees-city-why-attend {
+  // TODO: image background.
+  @include parallax-background();
+  background-image: url("/sites/all/themes/f2f17/assets/img/who-why-background-blur.jpg");
+  @include breakpoint('lg+') {
+    background-position-y: -200px;
+  }
+}

@@ -1,0 +1,286 @@
+@mixin node-homepage-event() {
+  border: 1px solid $color-secondary-1-light;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto;
+  .group-left {
+    height: 250px;
+    padding: 10px 20px;
+    @include bootstrap-col();
+    width: 100%;
+    .field-name-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      h4 {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 22px;
+      }
+    }
+    .field-name-field-date {
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .field-name-field-short-description {
+      margin-bottom: 15px;
+    }
+    .field-name-node-link {
+      a {
+        color: inherit;
+      }
+    }
+  }
+  .group-right {
+    height: 100%;
+    @include bootstrap-col();
+    width: 100%;
+    padding: 0;
+    .field-name-field-image {
+      height: auto;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+  @include breakpoint("s+") {
+    .group-right {
+      .field-name-field-image {
+        height: 250px;
+      }
+    }
+  }
+  @include breakpoint("l+") {
+    max-width: none;
+    height: 250px;
+    .group-left {
+      height: 100%;
+      width: 45%;
+    }
+    .group-right {
+      width: 55%;
+      // We need it to have it displayed in the right side doesn't matter that it displayed before group-left.
+      // Ans we display group-right earlier because we want image be shown at the top for small resolution.
+      float: right;
+
+      .field-name-field-image {
+        position: relative;
+        height: 100%;
+        img {
+          height: auto;
+          width: 100%;
+          height: auto;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin speaker() {
+  padding: 0;
+  height: 500px;
+  @include breakpoint("l") {
+    height: 750px;
+  }
+  @include breakpoint("m") {
+    height: 1100px;
+  }
+  @include breakpoint("s") {
+    height: 900px;
+  }
+  cursor: pointer;
+  margin: 0 auto 20px !important;
+  border: 1px solid $color-secondary-1-light;
+  transition: all .3s;
+  text-align: left;
+  .field-name-field-image {
+    overflow: hidden;
+    height: auto;
+    a {
+      display: block;
+    }
+    img {
+      height: auto;
+      width: 100%;
+    }
+    @include breakpoint("l-") {
+      height: 50%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @include breakpoint("xl") {
+      height: 50%;
+    }
+  }
+  .group-content {
+    // Used below
+    $padding-content: 15px;
+    position: relative;
+    height: 250px;
+    padding: $padding-content;
+    font-weight: bold;
+    @include breakpoint("l-"){
+      height: 50%;
+    }
+    >[class^="field"] {
+      line-height: normal;
+      margin: 5px 0;
+    }
+    .field-name-title {
+      color: $color-theme-1;
+      font-size: $font-size-base;
+      margin: 5px 0;
+      text-transform: uppercase;
+      h1, h2, h3, h4 {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        line-height: normal;
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .field-name-node-link {
+      position: absolute;
+      bottom: $padding-content;
+      left: $padding-content;
+      a {
+        @include btn-style();
+        color: $color-theme-1 !important;
+        background-color: $color-tertiary-1;
+        border-radius: 0;
+        &:hover {
+          background-color: $color-tertiary-1;
+          // Override btn-style() mixin. Weird. Why does mixin use "important"?
+          color: $color-theme-1 !important;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &:hover {
+    background-color : $color-theme-1;
+    .group-content {
+      >[class^="field"] {
+        color : white;
+      }
+      .field-name-title {
+        h1,h2,h3,h4 {
+          color: white;
+        }
+      }
+    }
+  }
+}
+@mixin speaker-full() {
+  .group-left {}
+  .group-right {}
+  .field-name-field-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .field-name-title {
+    h1, h2, h3 {
+      display: inline-block;
+      @include title-style($color-violet-main, 40px, 400);
+      .color {
+        color: $color-gray-3;
+      }
+      @include underline($color-violet-main, 2px);
+      &:after {
+        width: 60%;
+        max-width: 125px;
+        margin-top: 10px;
+      }
+    }
+  }
+  .field-name-job-title,  .field-name-field-company-name {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .field-name-field-sessions {
+    .field-name-title {
+      h1, h2, h3, h4 {
+        text-transform: uppercase;
+        color: $color-theme-1;
+        font-size: 22px;
+        line-height: normal;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  .group-speaker-social-links {
+    padding: 15px 0;
+    margin: 0 -15px;
+    width: 100%;
+    overflow: hidden;
+    .field {
+      @include bootstrap-col();
+      padding: 0 8px;
+      &:first-child {
+        padding-left: 15px;
+      }
+      &:last-child {
+        padding-right: 15px;
+      }
+      i {
+        font-size: 35px;
+        color: $color-gray-3;
+        &:hover {
+          color: $color-theme-1;
+        }
+      }
+    }
+  }
+}
+
+@mixin form-button() {
+  @include btn-style();
+  background-color : $color-theme-1;
+  color: white;
+  margin-left: 0 !important;
+}
+@mixin form-field() {
+  width: 100% !important;
+  @include breakpoint('lg+') {
+    width: 30% !important;
+  }
+  @include breakpoint('l+') {
+    width: 40% !important;
+  }
+  @include breakpoint('xs+') {
+    width: 90% !important;
+  }
+}
+@mixin form-label() {
+  font-weight: bold;
+  font-size: 16px;
+  float: none;
+  display: inline-block;
+  width: auto !important;
+  min-width: 65%;
+  max-width: 80% !important;
+  white-space: normal !important;
+}
+@mixin form-checkbox() {
+  width: auto !important;
+  float: left;
+  input {
+    width: auto !important;
+  }
+}

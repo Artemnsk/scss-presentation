@@ -1,0 +1,171 @@
+.node.node-event.view-mode-past_event {
+  @include node-homepage-event();
+}
+
+.node.node-event.view-mode-upcoming_event {
+  @include node-homepage-event();
+}
+
+.node.node-event.view-mode-upcoming_event_page {
+  font-size: 16px;
+  .group-left {
+    width: 100%;
+    @include bootstrap-col();
+    @include bootstrap-col-sm(8);
+    .field-name-title {
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      h4 {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 26px;
+      }
+    }
+    .field-name-field-date {
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .field-name-field-short-description {
+      margin-bottom: 15px;
+    }
+    .field-name-node-link {
+      margin-bottom: 20px;
+    }
+    .field-name-field-link {
+      a {
+        @include btn-style();
+      }
+    }
+  }
+  .group-right {
+    width: 100%;
+    @include bootstrap-col();
+    @include bootstrap-col-sm(4);
+    .field-name-field-image {
+      margin: 20px 0;
+      img {
+        margin: 0 auto;
+        display: block;
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+  }
+  @include breakpoint("m+") {
+    .group-right {
+      float: right;
+      .field-name-field-image {
+        margin: 0;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.node.node-event.view-mode-parallax_header {
+  text-align: center;
+  font-family: "roboto", Arial, sans-serif;
+  > .field-name-city-state .field-item,
+  > .field-name-field-date .field-item {
+    @include gray-title(80px);
+  }
+  .field-name-additional-date {
+    margin-top: 20px;
+    text-transform: uppercase;
+    .hasCountdown {
+      border: none;
+      background: none;
+      .countdown_row {
+        margin: 0 auto;
+        padding: 8px 10px;
+        // TODO: breakpoints.
+        width: auto;
+        overflow: hidden;
+        display: inline-block;
+        background-color: rgba(200, 200, 200, 0.7);
+        text-align: center;
+        @include breakpoint('m-') {
+          text-align: center;
+        }
+        .countdown_section {
+          display: inline-block;
+          font-size: 20px;
+          width: auto;
+          font-weight: lighter;
+          margin-right: 5px;
+          &:after {
+            margin-left: 5px;
+            content: "/";
+          }
+          &:last-child {
+            margin-right: 0;
+            &:after {
+              content: "";
+            }
+          }
+          .countdown_amount {
+            font-size: inherit;
+            display: inline;
+            margin-right: 5px;
+            font-weight: bold;
+          }
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .field-name-countdown-end-description {
+    margin-top: 20px;
+    text-transform: uppercase;
+    .countdown-end-description {
+      color: white;
+      font-weight: bold;
+      margin: 0 auto;
+      padding: 8px 10px;
+      // TODO: breakpoints.
+      width: auto;
+      overflow: hidden;
+      display: inline-block;
+      background-color: rgba(200, 200, 200, 0.7);
+      text-align: center;
+      @include breakpoint('m-') {
+        text-align: center;
+      }
+      a{
+        color: white;
+      }
+    }
+  }
+  .field-name-event-list-down {
+    margin-top: 20px;
+    $angle-size: 46px;
+    a {
+      margin: 0 auto;
+      display: block;
+      width: $angle-size;
+      height: $angle-size;
+      border-radius: $angle-size / 2;
+      border: 2px solid $color-tertiary-1;
+      font-size: 30px;
+      color: $color-tertiary-1;
+    }
+  }
+}
+
+.node.node-event.view-mode-parallax_header_inheritance {
+  text-align: center;
+  font-family: "roboto", Arial, sans-serif;
+  > .field-name-city-state .field-item,
+  > .field-name-field-date .field-item {
+    @include gray-title(40px);
+    @include breakpoint("s+") {
+      font-size: 60px;
+    }
+  }
+}

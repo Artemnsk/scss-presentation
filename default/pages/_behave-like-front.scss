@@ -1,0 +1,31 @@
+&.behave-like-front {
+  // Depends on overall page selector .behave-like-front we make node content violet.
+  // TODO: color.
+  $background-color: $color-violet-main;
+  .parallax-block {
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+      border: 40px solid transparent;
+      border-bottom: 30px solid $background-color;
+      @include breakpoint("s+") {
+        left: 200px;
+      }
+    }
+  }
+  #block-system-main {
+    background-color: $background-color;
+    @include wide-line($color-theme-1, 'after');
+    .node {
+      @include bootstrap-container();
+      padding: 40px 15px;
+      color: $color-tertiary-1;
+      position: relative;
+      @include breakpoint('m-') {
+        font-size: 14px;
+      }
+    }
+  }
+}

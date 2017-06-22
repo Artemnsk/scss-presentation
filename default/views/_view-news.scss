@@ -1,0 +1,65 @@
+.view.view-news.view-display-id-press_media_homepage {
+  @include bootstrap-container();
+  .view-header {
+    text-align: center;
+    margin-bottom: 70px;
+    h2 {
+      @include title-style($color-theme-1, 40px, 400);
+      @include underline($color-theme-1, 2px)
+      &:after {
+        top: auto;
+        bottom: -5px;
+      }
+    }
+  }
+  .views-row, .boxes-box {
+    margin-bottom: 30px;
+    .node-news, .boxes-box-content {
+      border: 1px solid $color-secondary-1-light;
+      min-height: 380px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      @include title-style(black, 18px, 600);
+    }
+    @include bootstrap-col();
+    @include bootstrap-col-xs(12);
+    @include bootstrap-col-sm(6);
+    @include bootstrap-col-lg(3);
+  }
+  .view-footer {
+    float: left;
+    display: block;
+    width: 100%;
+  }
+  @include breakpoint("l+") {
+    margin-bottom: 0;
+  }
+}
+.view.view-news.view-display-id-news_page {
+  .view-header {
+    h2 {
+      @include title-style($color-theme-1, 40px, 400);
+      @include underline($color-theme-1, 2px);
+      &:after {
+        margin: 0 auto;
+        top: 10px;
+
+      }
+    }
+  }
+  .view-content {
+    .views-row {
+      @include bootstrap-col();
+      @include bootstrap-col-md('3');
+      text-align : left;
+      cursor     : pointer;
+      padding: 0 15px !important;
+      clear: none !important;
+
+    }
+  }
+}

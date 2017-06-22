@@ -1,0 +1,124 @@
+.node {
+  .field-name-field-cover-image {
+    margin-bottom: 40px;
+    text-align: center;
+    @include full-size-image();
+  }
+  .field-name-body {
+    margin-bottom: 40px;
+    .field-item > h2 {
+      font-family: $font-family-main-bold;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.node.view-mode-full {
+  > .field-name-body {
+    margin: 10px 0 20px;
+  }
+  h1 {
+    @include title-style($color-theme-1, 40px);
+    @include green-line();
+    &:after {
+      top: initial;
+      bottom: -10px;
+    }
+  }
+
+  h2 {
+    @include title-style($color-violet-main, 28px);
+  }
+
+  h3 {
+    @include title-style($color-theme-3, 22px);
+  }
+
+  h4 {
+    @include title-style($color-theme-3, 16px);
+  }
+
+  .field-name-title {
+    h1 {
+      color: $color-violet-3;
+      &:after {
+        border-color: $color-violet-3;
+      }
+    }
+    .color {
+      color: $color-gray-3;
+    }
+  }
+}
+
+.node.view-mode-body {
+  .field-name-body {
+    margin: 0;
+  }
+}
+
+.node.view-mode-parallax_header {
+  @include bootstrap-container();
+  padding-top: 150px;
+  padding-bottom: 50px;
+  height: 560px;
+  text-align: right;
+  .field-name-field-parallax-header-html {
+    display: inline-block;
+    width: 100%;
+    font-size: 30px;
+    p {
+      text-align: right;
+      span {
+        @include gray-title(80px);
+      }
+    }
+  }
+  @include breakpoint('m-') {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    height: 360px;
+    p {
+      span {
+        font-size: smaller !important;
+      }
+    }
+  }
+  @include breakpoint('m+') {
+    .field-name-field-parallax-header-html {
+      width: 50%;
+    }
+  }
+}
+
+.node.view-mode-parallax_header_inheritance {
+  @include bootstrap-container();
+  // TODO: actually these padding are the same for all parallax images.
+  padding-top: 150px;
+  padding-bottom: 50px;
+  @include breakpoint('m-') {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    p {
+      span {
+        font-size: smaller !important;
+      }
+    }
+  }
+}
+
+.node.view-mode-parallax_header_html {
+  @include bootstrap-container();
+  // TODO: actually these padding are the same for all parallax images.
+  padding-top: 150px;
+  padding-bottom: 50px;
+  @include breakpoint('m-') {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    p {
+      span {
+        font-size: smaller !important;
+      }
+    }
+  }
+}

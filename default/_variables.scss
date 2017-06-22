@@ -1,0 +1,109 @@
+// font family
+$font-family-main: "roboto", Arial, sans-serif;
+$font-family-main-bold: $font-family-main;
+$font-family-main-light: $font-family-main;
+$font-family-side: Arial, Open Sans;
+$font-family-icon: FontAwesome;
+// font size
+$font-size-base: 16px;
+$font-size-heading-base: 20px;
+$font-size-h1: $font-size-heading-base * 2;
+$font-size-h2: $font-size-heading-base * 1.5;
+$font-size-h3: $font-size-heading-base;
+$font-size-h4: $font-size-base;
+$font-size-h5: $font-size-heading-base * 0.8;
+$font-size-h6: $font-size-heading-base * 0.7;
+// color palettes
+// primary
+$color-primary-1: #006892;
+$color-primary-1-base: #f0541A;
+$color-primary-1-dark: #004666;
+$color-primary-1-light: #a0c7dd;
+$color-primary-2: #b38808;
+$color-primary-2-base: #e7c61e;
+$color-primary-2-dark: #997729;
+$color-primary-2-light: #f7df71;
+$color-primary-3: #7d0049;
+$color-primary-3-base: #90597a;
+$color-primary-3-dark: #6c2b5a;
+$color-primary-3-light: #bea2be;
+$color-primary-4: #d9531e;
+$color-primary-4-base: #cc4b3a;
+$color-primary-4-dark: #9c4a41;
+$color-primary-4-light: #e77d7e;
+// secodary
+$color-secondary-1: #717073;
+$color-secondary-1-base: #919396;
+$color-secondary-1-dark: #5a5b5d;
+$color-secondary-1-light: #c0c2c4;
+$color-secondary-2: #f6a01a;
+$color-secondary-2-base: #d56b4a;
+$color-secondary-2-dark: #ac5f0f;
+$color-secondary-2-light: #f1b570;
+$color-secondary-3: #a3a510;
+$color-secondary-3-base: #849e49;
+$color-secondary-3-dark: #576b3f;
+$color-secondary-3-light: #e1d659;
+$color-secondary-4: #443d38;
+$color-secondary-4-light: #78777a;
+// tertiary
+// colors for alerts and tables
+$color-tertiary-1: #fff;
+$color-tertiary-1-base: #ddd;
+$color-tertiary-1-dark: #999;
+$color-tertiary-1-light: #f5f5f5;
+$color-tertiary-2: #f1f1f2;
+$color-tertiary-2-base: #ccc;
+$color-tertiary-2-dark: #666;
+$color-tertiary-2-light: #f0f0f0;
+$color-tertiary-3: #d8d8d9;
+$color-tertiary-3-light: #eee;
+$color-tertiary-4-light: #ffe6e6;
+$color-tertiary-5-light: #e7f2f7;
+$color-tertiary-6-light: #edfcca;
+$color-tertiary-7: #e7c61e;
+$color-tertiary-7-base: #f7df71;
+$color-tertiary-7-medium: #c59a1d;
+$color-tertiary-7-dark: #957510;
+$color-tertiary-7-light: #fbefb9;
+
+$color-theme-1: #f0541A;
+$color-theme-2: #3BC4EB;
+$color-theme-3: #333;
+$color-theme-4: #555;
+
+$color-violet-main: #662D91;
+$color-violet-2: #92278F;
+$color-violet-3: #90479B;
+$color-violet-4: #8D5FA7;
+$color-gray-main: #6D6E71;
+$color-gray-2: #939598;
+$color-gray-3: #BCBEC0;
+
+// Breakpoints
+$screen-xs: 480px;
+$screen-xs-max: ($screen-xs - 1);
+
+$screen-s: 768px;
+$screen-s-min: $screen-xs;
+$screen-s-max: ($screen-s - 1);
+
+$screen-m: 992px;
+$screen-m-min: $screen-s;
+$screen-m-max: ($screen-m - 1);
+// Used for bootstrap containers.
+$screen-m-container: $screen-m-min - 18;
+
+$screen-l: 1170px;
+$screen-l-min: $screen-m;
+$screen-l-max: ($screen-l - 1);
+
+$screen-lg: 1440px;
+$screen-lg-min: $screen-l;
+$screen-lg-max: ($screen-lg - 1);
+// Used for bootstrap containers.
+$screen-l-container: $screen-l-min - 22;
+
+$screen-xl-min: $screen-l;
+// Used for bootstrap containers.
+$screen-xl-container: $screen-xl-min - 30;

@@ -1,0 +1,13 @@
+&.node-type-session {
+  .view-speakers {
+    .view-header {
+      h1, h2, h3, h4 {
+        color : $color-violet-main;
+        @include underline($color-violet-main, 2px);
+        &:after {
+          margin: 5px auto;
+        }
+      }
+    }
+  }
+}

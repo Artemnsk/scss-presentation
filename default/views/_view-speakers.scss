@@ -1,0 +1,33 @@
+.view.view-speakers {
+  .view-content {
+    max-width: 900px;
+    margin: 30px auto;
+  }
+  .views-row {
+    @include bootstrap-col();
+    @include bootstrap-col-xs(12);
+    @include bootstrap-col-md(6);
+    @include bootstrap-col-lg(4);
+  }
+}
+
+.view.view-speakers.view-display-id-speakers_block {
+
+}
+
+.view.view-speakers.view-display-id-speakers_page {
+  .view-header {
+    h1, h2, h3, h4 {
+      @include title-style($color-theme-1, 40px, 400);
+      @include underline($color-theme-1, 2px);
+      &:after {
+        margin: 0 auto;
+        top: auto;
+        bottom: -5px;
+      }
+    }
+    p {
+      margin: 30px 0 20px 0;
+    }
+  }
+}

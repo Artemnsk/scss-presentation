@@ -1,0 +1,9 @@
+.block#block-views-attendees-main-why-attend {
+  // TODO: image background.
+  background-color: grey;
+  .views-row {
+    @include bootstrap-col-xs(12);
+    @include bootstrap-col-sm(6);
+    @include bootstrap-col-md(3);
+  }
+}

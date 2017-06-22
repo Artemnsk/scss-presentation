@@ -1,0 +1,106 @@
+#block-views-attendees-main-why-attend {
+  @include parallax-background();
+  background-image: url("/sites/all/themes/f2f17/assets/img/who-why-background-blur.jpg");
+  background-size: cover;
+  @include breakpoint("lg+") {
+    background-position-y: -200px;
+  }
+}
+
+.view.view-attendees.view-display-id-main_why_attend {
+  @include bootstrap-container();
+  color: $color-tertiary-1;
+  .view-header {
+    margin-bottom: 70px;
+  }
+  .views-row {
+    @include bootstrap-col();
+    @include bootstrap-col-xs(12);
+    @include bootstrap-col-sm(6);
+    @include bootstrap-col-lg(3);
+    padding: 0 30px;
+  }
+  .view-footer {
+    margin-top: 70px;
+    a {
+      @include btn-style();
+      color: $color-tertiary-1 !important;
+      margin: 0;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .view-header {
+    h3 {
+      color: white;
+      &:after {
+        border-color: white;
+      }
+    }
+  }
+}
+
+.view.view-attendees.view-display-id-city_why_attend {
+  @include bootstrap-container();
+  color: $color-tertiary-1;
+  .view-header {
+    margin-bottom: 70px;
+  }
+  .views-row {
+    @include bootstrap-col();
+    @include bootstrap-col-xs(12);
+    @include bootstrap-col-sm(6);
+    @include bootstrap-col-lg(3);
+    padding: 0 30px;
+  }
+  .view-footer {
+    margin-top: 70px;
+    a {
+      @include btn-style();
+      color: $color-tertiary-1 !important;
+      margin: 0;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .view-header {
+    h3 {
+      color: white;
+      &:after {
+        border-color: white;
+      }
+    }
+  }
+  &.attendees-3-2 {
+    .views-row {
+      @include bootstrap-col-lg(4);
+      &.views-row-4 {
+        @include breakpoint('xl') {
+          margin-left: 16.5%;
+        }
+      }
+    }
+  }
+  &.attendees-3-3 {
+    .views-row {
+      @include bootstrap-col-lg(4);
+    }
+  }
+  &.attendees-4-3 {
+    .views-row-5 {
+      @include breakpoint('xl') {
+        clear: left;
+        margin-left: 12.5%;
+      }
+    }
+  }
+  &.attendees-4-4 {
+    .views-row-5 {
+      @include breakpoint('xl') {
+        clear: left;
+      }
+    }
+  }
+}
